@@ -3,9 +3,9 @@ package vmware
 import (
 	"context"
 	"fmt"
-	"log"
 	"net/url"
 
+	"github.com/lesnuages/thm/pkg/utils"
 	"github.com/vmware/govmomi/session/cache"
 	"github.com/vmware/govmomi/vim25"
 	"github.com/vmware/govmomi/vim25/soap"
@@ -51,7 +51,7 @@ func Run(conf *Config, f func(context.Context, *vim25.Client) error) error {
 	if err == nil {
 		return f(ctx, c)
 	} else {
-		log.Fatal("could not create client\n", err)
+		utils.PrintError("could not create client: %v\n", err)
 	}
 	return err
 }
