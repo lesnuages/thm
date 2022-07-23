@@ -1,0 +1,5 @@
+thm
+*.exe
+*.bin
+*.env
+.DS_Store
