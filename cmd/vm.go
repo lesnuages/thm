@@ -120,6 +120,9 @@ func detailsVM(cmd *cobra.Command, args []string) {
 		cmd.PrintErrln(err)
 		return
 	}
+	if vm == nil {
+		return
+	}
 	printVM(cmd, vm)
 }
 
